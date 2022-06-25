@@ -5,8 +5,12 @@
     line-height: 30px;
 }
 
+.showDrop {
+  display: block;
+}
+ 
 .hideDrop {
-   background: lightblue;
+  display: none;
 }
 
 .isLeaf {

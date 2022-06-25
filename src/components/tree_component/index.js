@@ -16,26 +16,23 @@ export default class Tree extends Component {
 
   getClose(data) {
     data.map(element => {
-        console.log(element, 5555)
           if(element.children){
               this.getClose(element.children)
           }
         return element['flag'] = false 
       });
-      console.log(data, 7777)
      return data
   }
   
   // 点击切换数据
 
   changeFlag(data, key){
-      data.length && data.map(element => {
-        if(element.key !== key && element.children) {
-            this.changeFlag(element.children, key)
-        }
-        if(element.key === key) return  element.flag = !element.flag
-      })
-      return data;
+     data.forEach(element => {
+       if(element.key === key) {
+        element.flag = !element.flag
+       }
+     });
+     return data
   }
 
   clickMethod =(opt)=>{
